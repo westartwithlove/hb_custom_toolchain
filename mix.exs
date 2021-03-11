@@ -1,7 +1,7 @@
-defmodule NervesToolchainArmV7NervesLinuxGnueabihf.MixProject do
+defmodule HbCustomToolchain.MixProject do
   use Mix.Project
 
-  @app :nerves_toolchain_armv7_nerves_linux_gnueabihf
+  @app :hb_custom_toolchain
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -39,7 +39,7 @@ defmodule NervesToolchainArmV7NervesLinuxGnueabihf.MixProject do
       ],
       target_tuple: :armv7_nerves_linux_gnueabihf,
       artifact_sites: [
-        {:github_releases, "nerves-project/toolchains"}
+        {:github_releases, "westartwithlove/hb_custom_toolchain"}
       ],
       checksum: package_files()
     ]
@@ -47,14 +47,14 @@ defmodule NervesToolchainArmV7NervesLinuxGnueabihf.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.0", runtime: false},
+      {:nerves, "~> 1.7.3", runtime: false},
       {:nerves_toolchain_ctng, "~> 1.8.1", runtime: false}
     ]
   end
 
   defp description do
     """
-    Nerves Toolchain - armv7-nerves-linux-gnueabihf
+    Nerves Toolchain - hb_custom_toolchain
     """
   end
 
@@ -63,7 +63,7 @@ defmodule NervesToolchainArmV7NervesLinuxGnueabihf.MixProject do
       files: package_files(),
       licenses: ["Apache 2.0"],
       links: %{
-        "Github" => "https://github.com/nerves-project/toolchains/tree/main/#{@app}"
+        "Github" => "https://github.com/westartwithlove/hb_custom_toolchain"
       }
     ]
   end
